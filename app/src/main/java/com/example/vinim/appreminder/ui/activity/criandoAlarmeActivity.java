@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -27,7 +28,8 @@ public class criandoAlarmeActivity extends AppCompatActivity {
     private Button timeButton;
     private Switch campoVibrar;
     private RadioGroup radioGroupDiasSemana;
-    private RadioButton segunda,terca,quarta,quinta,sexta,sabado,domingo;
+    private CheckBox segunda,terca,quarta,quinta,sexta,sabado,domingo;
+    private Boolean segundaBool,tercaBool,quartaBool,quintaBool,sextaBool,sabadoBool,domingoBool;
     private boolean vibrarBool;
     //Chamando classe para salvar.
     final AlarmeDAO dao = new AlarmeDAO();
@@ -59,7 +61,8 @@ public class criandoAlarmeActivity extends AppCompatActivity {
         quarta = findViewById(R.id.radiogroup_diaEspecifico_quarta);
         quinta = findViewById(R.id.radiogroup_diaEspecifico_quinta);
         sexta = findViewById(R.id.radiogroup_diaEspecifico_sexta);
-
+        sabado = findViewById(R.id.radiogroup_diaEspecifico_sabado);
+        domingo = findViewById(R.id.radiogroup_diaEspecifico_domingo);
         setClickableButtonGroup(false);
     }
 
@@ -71,6 +74,7 @@ public class criandoAlarmeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Alarme alarmeCriado = criaAlarme(campoRemedio, campoDescricao);
+                Toast.makeText(criandoAlarmeActivity.this, alarmeCriado.getDias(), Toast.LENGTH_SHORT).show();
                 salva(alarmeCriado, dao);
                 //Toast.makeText(criandoAlarmeActivity.this, alarmeCriado.getRemedio()  , Toast.LENGTH_SHORT).show();
             }
@@ -89,9 +93,11 @@ public class criandoAlarmeActivity extends AppCompatActivity {
             vibrarBool = false;
         }
 
-        String repeticaoValor = radioGroupConversion();
+        verificando_repeticao();
+
         //Toast.makeText(this, repeticaoValor, Toast.LENGTH_SHORT).show();
-        return new Alarme(remedio, descricao, hour, minute, vibrarBool);
+        return new Alarme(remedio, descricao, hour, minute, vibrarBool, domingoBool, segundaBool,
+                tercaBool, quartaBool, quintaBool, sextaBool, sabadoBool);
     }
 
 
@@ -138,23 +144,30 @@ public class criandoAlarmeActivity extends AppCompatActivity {
             quarta.setEnabled(true);
             quinta.setEnabled(true);
             sexta.setEnabled(true);
+            sabado.setEnabled(true);
+            domingo.setEnabled(true);
+
         }else{
-            segunda.setEnabled(false);
             segunda.setChecked(false);
-            terca.setEnabled(false);
+            segunda.setEnabled(false);
             terca.setChecked(false);
-            quarta.setEnabled(false);
+            terca.setEnabled(false);
             quarta.setChecked(false);
-            quinta.setEnabled(false);
+            quarta.setEnabled(false);
             quinta.setChecked(false);
-            sexta.setEnabled(false);
+            quinta.setEnabled(false);
             sexta.setChecked(false);
+            sexta.setEnabled(false);
+            sabado.setChecked(false);
+            sabado.setEnabled(false);
+            domingo.setChecked(false);
+            domingo.setEnabled(false);
         }
     }
 
     public void verificacao_radioButtons(View view) {
         String s1 = radioGroupConversion();
-        String s2 = "Dia Especifico";
+        String s2 = "Dias manuais";
 
         if(s1.equals(s2)){
             setClickableButtonGroup(true);
@@ -163,5 +176,64 @@ public class criandoAlarmeActivity extends AppCompatActivity {
         }
     }
 
+    private void verificando_repeticao() {
+        String repeticaoValor = radioGroupConversion();
+
+        if(repeticaoValor.equals("Todo dia")){
+            segundaBool = true; tercaBool = true; quartaBool = true; quintaBool = true;
+            sextaBool = true; sabadoBool = true; domingoBool = true;
+        }
+        else if (repeticaoValor.equals("Dias de Semana")){
+            segundaBool = true; tercaBool = true; quartaBool = true; quintaBool = true;
+            sextaBool = true; sabadoBool = false; domingoBool = false;
+        }
+        else if(repeticaoValor.equals("Final de Semana")){
+            segundaBool = false; tercaBool = false; quartaBool = false; quintaBool = false;
+            sextaBool = false; sabadoBool = true; domingoBool = true;
+        }else if(repeticaoValor.equals("Dias manuais")){
+            if(segunda.isChecked()){
+                segundaBool = true;
+            }else {
+                segundaBool = false;
+            }
+
+            if(terca.isChecked()){
+                tercaBool = true;
+            }else {
+                tercaBool = false;
+            }
+
+            if(quarta.isChecked()){
+                quartaBool = true;
+            }else {
+                quartaBool = false;
+            }
+
+            if(quinta.isChecked()){
+                quintaBool = true;
+            }else {
+                quintaBool = false;
+            }
+
+            if(sexta.isChecked()){
+                sextaBool = true;
+            }else {
+                sextaBool = false;
+            }
+
+            if(sabado.isChecked()){
+                sabadoBool = true;
+            }else {
+                sabadoBool = false;
+            }
+
+            if(domingo.isChecked()){
+                domingoBool = true;
+            }else {
+                domingoBool = false;
+            }
+        }
+
+    }
 
 }

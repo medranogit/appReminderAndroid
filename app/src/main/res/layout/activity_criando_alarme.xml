@@ -9,10 +9,10 @@
 
     <Button
         android:id="@+id/activity_criando_horario"
-        android:onClick="salvarHora"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:onClick="salvarHora"
         android:text="Selecione a hora" />
 
     <EditText
@@ -20,16 +20,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:inputType="textCapWords"
-        android:hint="Remédio" />
+        android:hint="Remédio"
+        android:inputType="textCapWords" />
 
     <EditText
         android:id="@+id/activity_criando_descricao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
         android:layout_margin="8dp"
-        android:hint="Descrição" />
+        android:hint="Descrição"
+        android:inputType="textEmailAddress" />
 
     <Switch
         android:id="@+id/activity_switch_vibrar"
@@ -38,19 +38,20 @@
         android:layout_margin="8dp"
         android:text="Vibrar" />
 
+
     <EditText
         android:id="@+id/activity_criando_telefone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="phone"
         android:layout_margin="8dp"
-        android:hint="Telefone" />
+        android:hint="Telefone"
+        android:inputType="phone" />
 
     <RadioGroup
         android:id="@+id/activity_repeticao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:padding="8dp">
 
         <RadioButton
@@ -72,60 +73,78 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="verificacao_radioButtons"
+            android:layout_marginStart="-217dp"
+            android:layout_marginTop="40dp"
             android:text="Final de Semana" />
 
         <RadioButton
             android:id="@+id/radiogroup_diaEspecifico"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:onClick="verificacao_radioButtons"
-            android:text="Dia Especifico" />
-
-        <RadioGroup
-            android:id="@+id/radiogrop_diaEspecfico_opcoes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
-
-            <RadioButton
-                android:id="@+id/radiogroup_diaEspecifico_segunda"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Segunda" />
-
-            <RadioButton
-                android:id="@+id/radiogroup_diaEspecifico_terça"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Terça" />
-
-            <RadioButton
-                android:id="@+id/radiogroup_diaEspecifico_quarta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quarta" />
-
-            <RadioButton
-                android:id="@+id/radiogroup_diaEspecifico_quinta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quinta" />
-            <RadioButton
-                android:id="@+id/radiogroup_diaEspecifico_sexta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sexta" />
+            android:text="Dias manuais" />
 
 
-        </RadioGroup>
     </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/radiogroup_diaEspecifico_segunda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Segunda" />
+
+        <CheckBox
+            android:id="@+id/radiogroup_diaEspecifico_terça"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terça" />
+
+        <CheckBox
+            android:id="@+id/radiogroup_diaEspecifico_quarta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quarta" />
+
+        <CheckBox
+            android:id="@+id/radiogroup_diaEspecifico_quinta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quinta" />
+
+        <CheckBox
+            android:id="@+id/radiogroup_diaEspecifico_sexta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-300dp"
+            android:layout_marginTop="40dp"
+            android:text="Sexta" />
+
+        <CheckBox
+            android:id="@+id/radiogroup_diaEspecifico_sabado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Sabado" />
+
+        <CheckBox
+            android:id="@+id/radiogroup_diaEspecifico_domingo"
+            android:layout_width="117dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="40dp"
+            android:text="Domingo" />
+    </LinearLayout>
 
 
     <Button
         android:id="@+id/activity_botao_salvar"
         android:layout_width="match_parent"
-        android:text="CRIAR ALARME"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="CRIAR ALARME" />
 
 </LinearLayout>

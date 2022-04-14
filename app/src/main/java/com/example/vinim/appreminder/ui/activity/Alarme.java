@@ -8,16 +8,25 @@ public class Alarme {
 
     private final String remedio;
     private final String descricao;
+    private final Boolean domingo, segunda, terca, quarta, quinta, sexta, sabado;
     private final Integer hora;
     private final Integer minuto;
     private final Boolean vibrar;
 
-    public Alarme(String remedio, String descricao, Integer hora, Integer minuto, Boolean vibrar) {
+    public Alarme(String remedio, String descricao, Integer hora, Integer minuto, Boolean vibrar,
+                  Boolean domingo, Boolean segunda, Boolean terça, Boolean quarta, Boolean quinta, Boolean sexta, Boolean sabado) {
         this.remedio = remedio;
         this.descricao = descricao;
         this.hora = hora;
         this.minuto = minuto;
         this.vibrar = vibrar;
+        this.domingo = domingo;
+        this.segunda = segunda;
+        this.terca = terça;
+        this.quarta = quarta;
+        this.quinta = quinta;
+        this.sexta = sexta;
+        this.sabado = sabado;
     }
 
     @NonNull
@@ -46,9 +55,18 @@ public class Alarme {
     }
 
     @NonNull
-    public String getVibrar() {
-        String vibrarString = Boolean.toString(vibrar);
-        return vibrarString;
+    public String getDias() {
+        String domingoString = Boolean.toString(domingo);
+        String segundaString = Boolean.toString(segunda);
+        String terçaString = Boolean.toString(terca);
+        String quartaString = Boolean.toString(quarta);
+        String quintaString = Boolean.toString(quinta);
+        String sextaString = Boolean.toString(sexta);
+        String sabadoString = Boolean.toString(sabado);
+        String text = "dom: " + domingoString + " seg: " + segundaString + " ter: " + terçaString +
+                " quart: " + quartaString + " quin: " + quintaString + " sex: " + sextaString +
+                " sab: " + sabadoString;
+        return text;
     }
 
     //METODOS
@@ -58,4 +76,12 @@ public class Alarme {
         String timeString =  stringHour + ":" + stringMinute;
         return timeString;
     }
+
+    //Ativar
+
+    //Desativa
+
+    //
+
+
 }
