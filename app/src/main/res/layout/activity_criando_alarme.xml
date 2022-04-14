@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.criandoAlarmeActivity">
+
+    <Button
+        android:id="@+id/activity_criando_horario"
+        android:onClick="salvarHora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Selecione a hora" />
+
+    <EditText
+        android:id="@+id/activity_criando_remedio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:inputType="textCapWords"
+        android:hint="Remédio" />
+
+    <EditText
+        android:id="@+id/activity_criando_descricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:layout_margin="8dp"
+        android:hint="Descrição" />
+
+    <Switch
+        android:id="@+id/activity_switch_vibrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Vibrar" />
+
+    <EditText
+        android:id="@+id/activity_criando_telefone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:layout_margin="8dp"
+        android:hint="Telefone" />
+
+    <RadioGroup
+        android:id="@+id/activity_repeticao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <RadioButton
+            android:id="@+id/radiogroup_todoDia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="verificacao_radioButtons"
+            android:text="Todo dia" />
+
+        <RadioButton
+            android:id="@+id/radiogroup_diaDaSemana"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="verificacao_radioButtons"
+            android:text="Dias de Semana" />
+
+        <RadioButton
+            android:id="@+id/radiogroup_fimDeSemana"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="verificacao_radioButtons"
+            android:text="Final de Semana" />
+
+        <RadioButton
+            android:id="@+id/radiogroup_diaEspecifico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="verificacao_radioButtons"
+            android:text="Dia Especifico" />
+
+        <RadioGroup
+            android:id="@+id/radiogrop_diaEspecfico_opcoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <RadioButton
+                android:id="@+id/radiogroup_diaEspecifico_segunda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Segunda" />
+
+            <RadioButton
+                android:id="@+id/radiogroup_diaEspecifico_terça"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Terça" />
+
+            <RadioButton
+                android:id="@+id/radiogroup_diaEspecifico_quarta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quarta" />
+
+            <RadioButton
+                android:id="@+id/radiogroup_diaEspecifico_quinta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quinta" />
+            <RadioButton
+                android:id="@+id/radiogroup_diaEspecifico_sexta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sexta" />
+
+
+        </RadioGroup>
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/activity_botao_salvar"
+        android:layout_width="match_parent"
+        android:text="CRIAR ALARME"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
