@@ -13,3 +13,6 @@ O aplicativo tem como função principal cadastrar os remédios dos usuários e 
 <a href="https://github.com/medranogit/appReminderAndroid/tree/master/app/src/main/java/com/example/vinim/appreminder/db/activity"><p>Banco de dados</p></a>
 <a href="https://github.com/medranogit/appReminderAndroid/tree/master/app/src/main/java/com/example/vinim/appreminder/ui/activity"><p>back UI</p></a>
 <a href="https://github.com/medranogit/appReminderAndroid/tree/master/app/src/main/res/layout"><p>front UI</p></a>
+
+## Imagem
+<img width=150px src="https://i.imgur.com/8fQ4VQ9.png">
