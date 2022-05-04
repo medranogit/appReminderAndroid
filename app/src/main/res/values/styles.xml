@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Button.add" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/buttonAs</item>
+    </style>
+
+
 </resources>

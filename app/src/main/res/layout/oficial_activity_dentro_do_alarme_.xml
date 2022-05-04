@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.DentroDoAlarme_Activity"
+    android:background="#8a8a8a">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:background="#a4a4a4"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/activity_dentroDoAlarme_hora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="20:33"
+                    android:textAlignment="center"
+                    android:textSize="80dp" />
+
+                <Switch
+                    android:id="@+id/activity_dentroDoAlarme_onAndOff"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="7dp"
+                    android:text="OFF/ON"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:background="#a4a4a4">
+
+                <Button
+                    android:id="@+id/activity_dentroDoAlarme_mudarHora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="MUDAR HORA"
+                    android:onClick="escolherHora"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:background="#a4a4a4"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp">
+
+                <Switch
+                    android:id="@+id/activity_dentroDoAlarme_vibrar"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Vibrar"
+                    android:textSize="25dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:background="#a4a4a4">
+
+
+                <EditText
+                    android:id="@+id/activity_dentroDoAlarme_nomeRemedio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:hint="Escreva o nome do remedio."
+                    android:textAlignment="center"
+                    android:textSize="25dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:background="#a4a4a4"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp">
+
+
+                <EditText
+                    android:id="@+id/activity_dentroDoAlarme_descri"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="Descrição para voce escrever e assomar ti para la poque é para usar 3 vcezes ao dia."
+                    android:hint="Escreva a descrição aqui."
+                    android:textAlignment="center"
+                    android:textSize="25dp" />
+            </RelativeLayout>
+
+
+            <RadioGroup
+                android:id="@+id/activity_dentroDoAlarme_radiogroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <RadioButton
+                    android:id="@+id/radiogroup_todoDia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="acessorRadioButtonCheck"
+                    android:text="Todo dia" />
+
+                <RadioButton
+                    android:id="@+id/radiogroup_diaDaSemana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="acessorRadioButtonCheck"
+                    android:text="Dias de Semana" />
+
+                <RadioButton
+                    android:id="@+id/radiogroup_fimDeSemana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-217dp"
+                    android:layout_marginTop="40dp"
+                    android:onClick="acessorRadioButtonCheck"
+                    android:text="Final de Semana" />
+
+                <RadioButton
+                    android:id="@+id/radiogroup_diaEspecifico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:onClick="acessorRadioButtonCheck"
+                    android:text="Dias Especificos" />
+
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <CheckBox
+                    android:id="@+id/radiogroup_diaEspecifico_segunda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Segunda" />
+
+                <CheckBox
+                    android:id="@+id/radiogroup_diaEspecifico_terça"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Terça" />
+
+                <CheckBox
+                    android:id="@+id/radiogroup_diaEspecifico_quarta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quarta" />
+
+                <CheckBox
+                    android:id="@+id/radiogroup_diaEspecifico_quinta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quinta" />
+
+                <CheckBox
+                    android:id="@+id/radiogroup_diaEspecifico_sexta"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-300dp"
+                    android:layout_marginTop="40dp"
+                    android:text="Sexta" />
+
+                <CheckBox
+                    android:id="@+id/radiogroup_diaEspecifico_sabado"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="Sabado" />
+
+                <CheckBox
+                    android:id="@+id/radiogroup_diaEspecifico_domingo"
+                    android:layout_width="90dp"
+                    android:layout_height="31dp"
+                    android:layout_marginTop="40dp"
+                    android:text="Domingo" />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:background="#a4a4a4"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp">
+
+                <Button
+                    android:id="@+id/button4223"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginEnd="40dp"
+                    android:onClick="salvar"
+                    android:text="SALVAR"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

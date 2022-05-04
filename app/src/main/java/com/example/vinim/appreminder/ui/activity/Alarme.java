@@ -6,82 +6,150 @@ import android.support.annotation.NonNull;
 
 public class Alarme {
 
-    private final String remedio;
-    private final String descricao;
-    private final Boolean domingo, segunda, terca, quarta, quinta, sexta, sabado;
-    private final Integer hora;
-    private final Integer minuto;
-    private final Boolean vibrar;
+    private String id;
+    private String remedio;
+    private Boolean vibrar;
+    private Boolean domingo, segunda, terca, quarta, quinta, sexta, sabado;
+    private String hora, minuto;
+    private String state;
+    private String descricao;
 
-    public Alarme(String remedio, String descricao, Integer hora, Integer minuto, Boolean vibrar,
-                  Boolean domingo, Boolean segunda, Boolean terça, Boolean quarta, Boolean quinta, Boolean sexta, Boolean sabado) {
+    public Alarme(String id, String horas, String minutos, String remedio, String descricao, Boolean vibrar,
+                  Boolean domingo, Boolean segunda, Boolean terca, Boolean quarta,
+                  Boolean quinta, Boolean sexta, Boolean sabado, String state) {
+
+        this.id = id;
         this.remedio = remedio;
         this.descricao = descricao;
-        this.hora = hora;
-        this.minuto = minuto;
         this.vibrar = vibrar;
+        this.hora = horas;
+        this.minuto = minutos;
         this.domingo = domingo;
         this.segunda = segunda;
-        this.terca = terça;
+        this.terca = terca;
         this.quarta = quarta;
         this.quinta = quinta;
         this.sexta = sexta;
         this.sabado = sabado;
+        this.state = state;
     }
 
-    @NonNull
-    @Override //Esse é o texto que aparecera na lista. No caso oq representa a classe.
-    public String toString() {
-        String hora = conversaoHoraParaTexto();
-        String textLista = hora + " - " + remedio;
-        return textLista;
+    public String getId() {
+        return id;
     }
 
-    //ACESSORES
-    @NonNull
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
     public String getRemedio() {
         return remedio;
     }
 
-    @NonNull
+    public void setRemedio(String remedio) {
+        this.remedio = remedio;
+    }
+
+    public Boolean getVibrar() {
+        return vibrar;
+    }
+
+    public void setVibrar(Boolean vibrar) {
+        this.vibrar = vibrar;
+    }
+
     public String getDescricao() {
         return descricao;
     }
 
-    @NonNull
-    public String getHour() {
-        String timeString = conversaoHoraParaTexto();
-        return timeString;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    @NonNull
-    public String getDias() {
-        String domingoString = Boolean.toString(domingo);
-        String segundaString = Boolean.toString(segunda);
-        String terçaString = Boolean.toString(terca);
-        String quartaString = Boolean.toString(quarta);
-        String quintaString = Boolean.toString(quinta);
-        String sextaString = Boolean.toString(sexta);
-        String sabadoString = Boolean.toString(sabado);
-        String text = "dom: " + domingoString + " seg: " + segundaString + " ter: " + terçaString +
-                " quart: " + quartaString + " quin: " + quintaString + " sex: " + sextaString +
-                " sab: " + sabadoString;
-        return text;
+    public String getTime() {
+        String time = hora +":"+minuto;
+        return time;
     }
 
-    //METODOS
-    private String conversaoHoraParaTexto(){
-        String stringHour = Integer.toString(hora);
-        String stringMinute = Integer.toString(minuto);
-        String timeString =  stringHour + ":" + stringMinute;
-        return timeString;
+    public void setTime(String time) {
+        String[] timeSplited = time.split(":");
+        this.hora = timeSplited[0];
+        this.minuto = timeSplited[1];
     }
 
-    //Ativar
+    public void setDiasSemana(Boolean dom, Boolean seg, Boolean ter, Boolean qua,
+                              Boolean qui, Boolean sext, Boolean sab){
+        this.domingo = dom;
+        this.segunda = seg;
+        this.terca = ter;
+        this.quarta = qua;
+        this.quinta = qui;
+        this.sexta = sext;
+        this.sabado = sab;
+    }
 
-    //Desativa
+    public String getDiasSemana(){
 
-    //
+        //retornar o texto dias da semana baseada em uma estrutura condicional
+        if(domingo == true && segunda == true && terca == true && quarta == true &&
+                quinta == true && sexta == true && sabado == true)
+        {
+            return "Todos os dias";
+        }
+        else if(domingo == false && segunda == true && terca == true && quarta == true &&
+                quinta == true && sexta == true && sabado == false)
+        {
+            return "Dias de Semana";
+        }
+        else if(domingo == true && segunda == false && terca == false && quarta == false &&
+                quinta == false && sexta == false && sabado == true)
+        {
+            return "Final de Semana";
+        }
+        else{
+            String dom = "";
+            String seg = "";
+            String ter = "";
+            String quar = "";
+            String quin = "";
+            String sext = "";
+            String sab = "";
 
+            if(domingo == true){
+                dom = "domingo";
+            }
+            if(segunda == true){
+                seg = "segunda";
+            }
+            if(terca == true){
+                ter = "terca";
+            }
+            if(quarta == true){
+                quar = "quarta";
+            }
+            if(quinta == true){
+                quin = "quinta";
+            }
+            if(sexta == true){
+                sext = "sexta";
+            }
+            if(sabado == true){
+                sab = "sabado";
+            }
+
+
+            String text = dom+":"+seg+":"+ter+":"+
+            quar+":"+quin+":"+sext+":"+sab;
+            return text;
+        }
+    }
 
 }
