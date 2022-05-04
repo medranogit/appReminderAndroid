@@ -3,7 +3,7 @@ Desenvolvendo um aplicativo de alarme como trabalho academico Faculdade Eniac.
 
 ## Resumo
 
-O trabalho remete a um novo aplicativo desenvolvido por mim utilizando a linguagem Java que é a linguagem nativa android, utilizando a ferramenta Android Studio como ambiente de desenvolvimento.
+O trabalho remete a um novo aplicativo desenvolvido por mim utilizando a linguagem Java que é a linguagem nativa android, e a ferramenta Android Studio como ambiente de desenvolvimento.
 
 O aplicativo foi criado visando atender o público com necessidade de fazer uso controlado de remédios, com base nessa ideia realizei pesquisas para verificar a melhor forma para a criação do aplicativo.
 
